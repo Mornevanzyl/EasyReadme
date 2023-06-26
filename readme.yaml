@@ -1,0 +1,42 @@
+project:
+  name: EasyReadme
+  logoUri: https://noxorg.dev/docs/images/EasyReadme.png
+  cloudUri: https://github.com/Mornevanzyl/EasyReadme
+  tagLine: Taking the fuss out of project README files!
+
+header:
+  show: true
+  useShields: true
+  useLogo: true
+  useName: true
+  useTagLine: true
+
+sections:
+  - heading: About
+    content: EasyReadme is a lightweight utility that simplifies the task of creating a README.md file for your project repository. It reads a simple YAML configuration file and scaffolds a README file that you can edit.
+  - heading: Key Features
+    listContent:
+      - Configure your README using a simple YAML file
+      - Switch GitHub project shields on/off will little effort
+      - Single entry project URIs and info.
+      - Compatible with GitHub and Azure DevOps.
+  - heading: Getting started
+    content: Simply clone the project, update the readme.yaml and run the program. The program will scaffold a README.md which you can edit.
+  - heading: Acknowledgements
+    content: Thanks to Andreas Grünwald for his cool Markdown Generator package.
+# This section is optional but allows custom GitHub configuration
+gitHub:
+  shields:
+    - name: version
+      label: Nuget
+      show: false
+    - name: contributors
+      show: false
+    - name: issues
+      show: true
+    - name: stars
+      show: true
+    - name: build
+      show: false
+    - name: forks
+      show: true
