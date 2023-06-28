@@ -6,16 +6,21 @@
 
 <p align="center">Taking the fuss out of project README files!</p>
 
+<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details><br />
+
 # About
 
 EasyReadme is a lightweight utility that simplifies the task of creating a README.md file for your project repository. It reads a simple YAML configuration file and scaffolds a README file that you can edit.
 
+> 💡 This project ```README.md``` was built entirely by configuring the ```readme.yaml``` file in the project root.
+
 # Key Features
 
-- Configure your README using a simple YAML file.
+- Scaffold your README by configuring a simple YAML file.
 - Switch GitHub project shields on\/off with little effort.
+- Auto\-generation of multi\-level Table of Content from document sections.
 - Single entry project URIs and info.
-- Content blocks support normal text, raw markdown and list items.
+- Content blocks support normal text, raw markdown, code blocks and list items.
 - Compatible with GitHub and Azure DevOps.
 
 # Getting started
@@ -39,6 +44,20 @@ dotnet run
 # Acknowledgements
 
 Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.
+
+# Contributing
+
+I just wrote this utility because I got tired copying and pasting previous project READMEs and updating all the links, content ect. I have no doubt that there are probably a gazillion better ways of doing it, but it does the job.
+
+Contributions is what makes the open\-source world go 'round and lets us learn from one another. If you'd like to make a meaningful contribution, please follow the routine below
+
+- Fork the project
+- Create your feature branch, commit and push your changes
+- Open a pull request
+
+# Contact
+
+Twitter - [@mvzphoto](https://twitter.com/mvzphoto)
 
 [version-shield]: https://img.shields.io/nuget/v/EasyReadme.svg?style=for-the-badge
 

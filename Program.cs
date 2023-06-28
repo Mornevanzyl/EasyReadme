@@ -52,6 +52,10 @@ if (readme.Header.Show)
     {
         document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"<p align=\"center\">{readme.Project.TagLine}</p>")));
     }
+    if (readme.Header.UseTableOfContent)
+    {
+        document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(readme.GenerateTableOfContent())));
+    }
 }
 
 foreach (Section section in readme.Sections)

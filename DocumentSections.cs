@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EasyReadme
@@ -11,6 +12,37 @@ namespace EasyReadme
         public Header Header { get; set; }
         public List<Section> Sections { get; set; }
         public GitHub GitHub { get; set; }
+        public string GenerateTableOfContent()
+        {
+            int previousLevel = 1;
+            var tableOfContent = new StringBuilder();
+            tableOfContent.Append($"<details><summary>Table of Contents</summary><ol>");
+            foreach (var section in this.Sections)
+            {
+                if (section.HeadingSize == 1)
+                {
+                    tableOfContent.Append($"<li>");
+                    tableOfContent.Append($"<a href=\"#{section.Heading.ToLower().Replace(" ", "-")}\">{section.Heading}</a>");
+                    tableOfContent.Append($"</li>");
+                }
+                else
+                {
+                    if (section.HeadingSize == previousLevel)
+                    {
+                        tableOfContent.Remove(tableOfContent.Length - 5, 5);
+                    }
+                    else
+                    {
+                        tableOfContent.Append($"<ul>");
+                    }
+                    tableOfContent.Append($"<li><a href=\"#{section.Heading.ToLower().Replace(" ", "-")}\">{section.Heading}</a></li>");
+                    tableOfContent.Append($"</ul>");
+                }
+                previousLevel = section.HeadingSize;
+            }
+            tableOfContent.Append($"</ol></details><br />");
+            return tableOfContent.ToString();
+        }
     }
 
     public class Project
@@ -68,6 +100,7 @@ namespace EasyReadme
         public bool UseLogo { get; set; }
         public bool UseName { get; set; }
         public bool UseTagLine { get; set; }
+        public bool UseTableOfContent { get; set; }
     }
 
     public class Section
