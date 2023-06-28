@@ -73,7 +73,15 @@ namespace EasyReadme
     public class Section
     {
         public string Heading { get; set; }
-        public string Content { get; set; }
-        public string[] ListContent { get; set; }
+        public int HeadingSize { get; set; } = 1;
+        public List<ContentBlock> ContentBlocks { get; set; }
+    }
+
+    public class ContentBlock
+    {
+        public string Text { get; set; }
+        public string Raw { get; set; }
+        public string CodeBlock { get; set; }
+        public string[] List { get; set; }
     }
 }

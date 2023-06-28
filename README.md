@@ -12,14 +12,29 @@ EasyReadme is a lightweight utility that simplifies the task of creating a READM
 
 # Key Features
 
-- Configure your README using a simple YAML file
-- Switch GitHub project shields on\/off will little effort
+- Configure your README using a simple YAML file.
+- Switch GitHub project shields on\/off with little effort.
 - Single entry project URIs and info.
+- Content blocks support normal text, raw markdown and list items.
 - Compatible with GitHub and Azure DevOps.
 
 # Getting started
 
-Simply clone the project, update the ```readme.yaml``` and run the program. The program will scaffold a README.md which you can edit.
+## Prerequisites
+
+Make sure you have [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) or later installed.
+
+## Running the application
+
+```
+git clone https://github.com/Mornevanzyl/EasyReadme.git
+```
+
+Modify the ```readme.yaml``` with descriptors and settings appropriate to your project.
+
+```
+dotnet run
+```
 
 # Acknowledgements
 

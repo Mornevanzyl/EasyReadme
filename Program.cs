@@ -60,28 +60,44 @@ foreach (Section section in readme.Sections)
 
 for (int i = 0; i < readme.Sections.Count; i++)
 {
-    //if (!readme.Project.IsGitHubProject() && i == 0)
+
+    var section = readme.Sections[i];
+
+    // Show project header for first section if no document header is used
     if (!readme.Header.Show && i == 0)
     {
-        document.Root.Add(new MdHeading(readme.Project.Name, 1));
-        document.Root.Add(new MdParagraph(readme.Sections[i].Content));
+        document.Root.Add(new MdHeading(readme.Project.Name, section.HeadingSize));
     }
     else
     {
-        document.Root.Add(new MdHeading(readme.Sections[i].Heading, 1));
-        if (readme.Sections[i].Content != null)
+        document.Root.Add(new MdHeading(section.Heading, section.HeadingSize));
+    }
+
+    if (section.ContentBlocks != null)
+    {
+        foreach (var contentBlock in section.ContentBlocks)
         {
-            document.Root.Add(new MdParagraph(readme.Sections[i].Content));
-        }
-        if (readme.Sections[i].ListContent != null)
-        {
-            MdBulletList featureList = new MdBulletList();
-            foreach (var item in readme.Sections[i].ListContent)
+            if (contentBlock.Text != null)
             {
-                featureList.Add(new MdListItem(new MdParagraph(item)));
-                //document.Root.Add(new MdBulletList(new MdListItem(new MdParagraph(readme.Sections[i].ListContent)), new MdListItem()));
+                document.Root.Add(new MdParagraph(contentBlock.Text));
             }
-            document.Root.Add(featureList);
+            if (contentBlock.Raw != null)
+            {
+                document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Raw)));
+            }
+            if (contentBlock.CodeBlock != null)
+            {
+                document.Root.Add(new MdCodeBlock(contentBlock.CodeBlock));
+            }
+            if (contentBlock.List != null)
+            {
+                MdBulletList featureList = new MdBulletList();
+                foreach (var item in contentBlock.List)
+                {
+                    featureList.Add(new MdListItem(new MdParagraph(item)));
+                }
+                document.Root.Add(featureList);
+            }
         }
     }
 }
