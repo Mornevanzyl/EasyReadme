@@ -40,7 +40,11 @@ namespace EasyReadme
                 }
                 previousLevel = section.HeadingSize;
             }
-            tableOfContent.Append($"</ol></details><br />");
+            tableOfContent.Append($"</ol></details>");
+            if (!this.Project.IsGitHubProject())
+            {
+                tableOfContent.Append($"<br />");
+            }
             return tableOfContent.ToString();
         }
     }
