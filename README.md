@@ -35,11 +35,9 @@ Make sure you have [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet
 git clone https://github.com/Mornevanzyl/EasyReadme.git
 ```
 
-Modify the ```readme.yaml``` with descriptors and settings appropriate to your project.
+Modify the ```readme.yaml``` with descriptors and settings appropriate to your project. The image below should give you a good idea how to start.
 
-```
-dotnet run
-```
+<div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo.gif" alt="" width="100%"><br /></div>
 
 # Acknowledgements
 
