@@ -123,19 +123,21 @@ for (int i = 0; i < readme.Sections.Count; i++)
     }
 }
 
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[version-shield]: https://img.shields.io/nuget/v/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[version-url]: https://www.nuget.org/packages/{readme.Project.ProjectName()}")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[build-shield]: https://img.shields.io/github/actions/workflow/status/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/{readme.Project.BuildFile()}?branch=main&event=push&label=Build&style=for-the-badge")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[build-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/actions/workflows/{readme.Project.BuildFile()}?query=branch%3Amain")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[contributors-shield]: https://img.shields.io/github/contributors/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[contributors-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/graphs/contributors")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[forks-shield]: https://img.shields.io/github/forks/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[forks-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/network/members")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[stars-shield]: https://img.shields.io/github/stars/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[stars-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/stargazers")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[issues-shield]: https://img.shields.io/github/issues/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
-document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[issues-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/issues")));
-
+if (readme.Project.IsGitHubProject())
+{
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[version-shield]: https://img.shields.io/nuget/v/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[version-url]: https://www.nuget.org/packages/{readme.Project.ProjectName()}")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[build-shield]: https://img.shields.io/github/actions/workflow/status/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/{readme.Project.BuildFile()}?branch=main&event=push&label=Build&style=for-the-badge")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[build-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/actions/workflows/{readme.Project.BuildFile()}?query=branch%3Amain")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[contributors-shield]: https://img.shields.io/github/contributors/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[contributors-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/graphs/contributors")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[forks-shield]: https://img.shields.io/github/forks/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[forks-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/network/members")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[stars-shield]: https://img.shields.io/github/stars/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[stars-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/stargazers")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[issues-shield]: https://img.shields.io/github/issues/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}.svg?style=for-the-badge")));
+    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan($"[issues-url]: https://github.com/{readme.Project.ProjectOwner()}/{readme.Project.ProjectName()}/issues")));
+}
 // save document to a file
 document.Save("README.md");
 

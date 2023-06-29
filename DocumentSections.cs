@@ -80,6 +80,10 @@ namespace EasyReadme
 
         public bool IsGitHubProject()
         {
+            if (this.CloudUri == null)
+            {
+                return false;
+            }
             var fullUri = new Uri(this.CloudUri);
             return this.CloudUri.Contains("github.com");
         }
