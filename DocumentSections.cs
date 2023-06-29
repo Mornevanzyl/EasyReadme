@@ -119,6 +119,25 @@ namespace EasyReadme
         public string Text { get; set; }
         public string Raw { get; set; }
         public string CodeBlock { get; set; }
-        public string[] List { get; set; }
+        public string BlockQuote { get; set; }
+        public string[] BulletList { get; set; }
+        public string[] OrderedList { get; set; }
+        public Image Image { get; set; }
+    }
+
+    public class Image
+    {
+        public string Uri { get; set; }
+        public string AltText { get; set; } = "";
+        public string Align { get; set; } = "center";
+        public int Width { get; set; } = 100;
+        public string GenerateMarkup()
+        {
+            var html = new StringBuilder();
+            html.Append($"<div align=\"{this.Align}\">");
+            html.Append($"<img src=\"{this.Uri}\" alt=\"{this.AltText}\" width=\"{this.Width}%\">");
+            html.Append($"<br /></div>");
+            return html.ToString();
+        }
     }
 }

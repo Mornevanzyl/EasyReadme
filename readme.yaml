@@ -16,15 +16,15 @@ sections:
 - heading: About
   contentBlocks:
   - text: EasyReadme is a lightweight utility that simplifies the task of creating a README.md file for your project repository. It reads a simple YAML configuration file and scaffolds a README file that you can edit.
-  - raw: '> 💡 This project ```README.md``` was built entirely by configuring the ```readme.yaml``` file in the project root.'
+  - blockQuote: 💡 This project `README.md` was built entirely by configuring the `readme.yaml` file in the project root.
 - heading: Key Features
   contentBlocks:
-  - list:
+  - bulletList:
     - Scaffold your README by configuring a simple YAML file.
     - Switch GitHub project shields on/off with little effort.
     - Auto-generation of multi-level Table of Content from document sections.
     - Single entry project URIs and info.
-    - Content blocks support normal text, raw markdown, code blocks and list items.
+    - Content blocks support normal text, images, raw markdown, code blocks and lists (both bullet and numbered).
     - Compatible with GitHub and Azure DevOps.
 - heading: Getting started
 - heading: Prerequisites
@@ -44,13 +44,13 @@ sections:
   contentBlocks:
   - text: I just wrote this utility because I got tired copying and pasting previous project READMEs and updating all the links, content ect. I have no doubt that there are probably a gazillion better ways of doing it, but it does the job.
   - text: Contributions is what makes the open-source world go 'round and lets us learn from one another. If you'd like to make a meaningful contribution, please follow the routine below
-  - list:
+  - orderedList:
     - Fork the project
     - Create your feature branch, commit and push your changes
     - Open a pull request
 - heading: Contact
   contentBlocks:
-  - raw: Twitter - [@mvzphoto](https://twitter.com/mvzphoto)
+  - raw: Connect on [Twitter](https://twitter.com/catbeatsadrum) or [GitHub](https://github.com/Mornevanzyl)
 
 # This section is optional but allows custom GitHub configuration
 gitHub:

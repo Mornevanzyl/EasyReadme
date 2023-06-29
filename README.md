@@ -12,15 +12,15 @@
 
 EasyReadme is a lightweight utility that simplifies the task of creating a README.md file for your project repository. It reads a simple YAML configuration file and scaffolds a README file that you can edit.
 
-> 💡 This project ```README.md``` was built entirely by configuring the ```readme.yaml``` file in the project root.
+> 💡 This project `README.md` was built entirely by configuring the `readme.yaml` file in the project root.
 
 # Key Features
 
 - Scaffold your README by configuring a simple YAML file.
-- Switch GitHub project shields on\/off with little effort.
-- Auto\-generation of multi\-level Table of Content from document sections.
+- Switch GitHub project shields on/off with little effort.
+- Auto-generation of multi-level Table of Content from document sections.
 - Single entry project URIs and info.
-- Content blocks support normal text, raw markdown, code blocks and list items.
+- Content blocks support normal text, images, raw markdown, code blocks and lists (both bullet and numbered).
 - Compatible with GitHub and Azure DevOps.
 
 # Getting started
@@ -51,13 +51,13 @@ I just wrote this utility because I got tired copying and pasting previous proje
 
 Contributions is what makes the open\-source world go 'round and lets us learn from one another. If you'd like to make a meaningful contribution, please follow the routine below
 
-- Fork the project
-- Create your feature branch, commit and push your changes
-- Open a pull request
+1. Fork the project
+2. Create your feature branch, commit and push your changes
+3. Open a pull request
 
 # Contact
 
-Twitter - [@mvzphoto](https://twitter.com/mvzphoto)
+Connect on [Twitter](https://twitter.com/catbeatsadrum) or [GitHub](https://github.com/Mornevanzyl)
 
 [version-shield]: https://img.shields.io/nuget/v/EasyReadme.svg?style=for-the-badge
 

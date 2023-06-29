@@ -70,7 +70,7 @@ for (int i = 0; i < readme.Sections.Count; i++)
     // Show project header for first section if no document header is used
     if (!readme.Header.Show && i == 0)
     {
-        document.Root.Add(new MdHeading(readme.Project.Name, section.HeadingSize));
+        document.Root.Add(new MdHeading($"About {readme.Project.Name}", section.HeadingSize));
     }
     else
     {
@@ -93,14 +93,31 @@ for (int i = 0; i < readme.Sections.Count; i++)
             {
                 document.Root.Add(new MdCodeBlock(contentBlock.CodeBlock));
             }
-            if (contentBlock.List != null)
+            if (contentBlock.BlockQuote != null)
             {
-                MdBulletList featureList = new MdBulletList();
-                foreach (var item in contentBlock.List)
+                document.Root.Add(new MdBlockQuote(new MdRawMarkdownSpan(contentBlock.BlockQuote)));
+            }
+            if (contentBlock.BulletList != null)
+            {
+                MdBulletList list = new MdBulletList();
+                foreach (var item in contentBlock.BulletList)
                 {
-                    featureList.Add(new MdListItem(new MdParagraph(item)));
+                    list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
                 }
-                document.Root.Add(featureList);
+                document.Root.Add(list);
+            }
+            if (contentBlock.OrderedList != null)
+            {
+                MdOrderedList list = new MdOrderedList();
+                foreach (var item in contentBlock.OrderedList)
+                {
+                    list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                }
+                document.Root.Add(list);
+            }
+            if (contentBlock.Image != null)
+            {
+                document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Image.GenerateMarkup())));
             }
         }
     }

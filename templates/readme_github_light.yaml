@@ -1,7 +1,7 @@
 project:
   name: MyProject
   logoUri: https://noxorg.dev/docs/images/MyProject.png
-  cloudUri: https://github.com/Mornevanzyl/EasyReadme
+  cloudUri: https://github.com/Mornevanzyl/EasyReadme.git
   tagLine: Think big, start small, scale fast & run for your life!
 
 header:

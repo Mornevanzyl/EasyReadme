@@ -1,0 +1,76 @@
+project:
+  name: MyProject
+  logoUri: https://noxorg.dev/docs/images/MyProject.png
+  cloudUri: https://github.com/Mornevanzyl/EasyReadme
+  tagLine: Think big, start small, scale fast & run for your life!
+
+header:
+  show: true
+  useShields: true
+  useLogo: true
+  useName: true
+  useTagLine: true
+  useTableOfContent: true
+
+sections:
+- heading: About the project
+  contentBlocks:
+  - text: Enter a brief and concise overview of what your package is and what its main objective(s) are. 
+  - blockQuote: 💡 Does your application solve any existing problem or business challenge? If so, mention that here.
+- heading: Key Features
+  contentBlocks:
+  - text: A diagram is an excellent tool to provide a quick overview of your application function. It's especially useful for complex applications or to show the role of your component within a large enterprise application.
+  - image:
+      uri: https://venngage-wordpress.s3.amazonaws.com/uploads/2021/08/f5814953-2bc3-4be7-9c29-3ac467742f181.png
+      altText: Venngage has many diagram templates
+      width: 92
+  - bulletList:
+    - This key feature sets my project apart from an army of clones.
+    - This great garbage collection feature will make a Roomba weep.
+    - This feature had my wife nodding with approval whilst watching Grey's Anatomy.
+    - And don't even get me started on this nifty easter egg for Star Wars fans.
+- heading: Getting started
+- heading: Prerequisites
+  headingSize: 2
+  contentBlocks:
+  - raw: Outline system or development prerequisites to install or integrate the application or package in the user's application. Include [links](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) to avoid ambiguity.
+- heading: Running the application
+  headingSize: 2
+  contentBlocks:
+  - codeBlock: git clone https://github.com/MyGitProfile/MyProject.git
+  - raw: Provide step-by-step instructions to running the application, including cloning and run directives.
+  - codeBlock: dotnet run
+- heading: Acknowledgements
+  contentBlocks:
+  - raw: Acknowledge [people](https://github.com/torvalds) that have contributed to your project or provided inspiration. List [packages](https://github.com/torvalds/linux) that you may have used in your solution.
+- heading: Contributing
+  contentBlocks:
+  - raw: Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+  - text: If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+  - text: Don't forget to give the project a star! Thanks again!
+  - orderedList:
+    - Fork the Project
+    - Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+    - Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+    - Push to the Branch (`git push origin feature/AmazingFeature`)
+    - Open a Pull Request
+- heading: Contact
+  contentBlocks:
+  - raw: Connect on [Twitter](https://twitter.com/catbeatsadrum) or [GitHub](https://github.com/Mornevanzyl)
+
+# This section is optional but allows custom GitHub configuration
+gitHub:
+  shields:
+    - name: version
+      label: Nuget
+      show: false
+    - name: contributors
+      show: false
+    - name: issues
+      show: true
+    - name: stars
+      show: true
+    - name: build
+      show: false
+    - name: forks
+      show: true
