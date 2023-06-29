@@ -37,6 +37,8 @@ git clone https://github.com/Mornevanzyl/EasyReadme.git
 
 Modify the ```readme.yaml``` with descriptors and settings appropriate to your project. The image below should give you a good idea how to start.
 
+![EasyReadme demo](https://noxorg.dev/docs/images/EasyReadme_demo.gif)
+
 <div align="center">
   <img src="https://noxorg.dev/docs/images/EasyReadme_demo.gif" alt="" width="100%">
   <br />
