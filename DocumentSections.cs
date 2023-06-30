@@ -8,15 +8,18 @@ namespace EasyReadme
 {
     public class ReadMe
     {
-        public Project Project { get; set; }
-        public Header Header { get; set; }
-        public List<Section> Sections { get; set; }
-        public GitHub GitHub { get; set; }
+        public Project Project { get; set; } = new Project();
+        public Header Header { get; set; } = new Header();
+        public List<Section>? Sections { get; set; }
+        public GitHub? GitHub { get; set; }
         public string GenerateTableOfContent()
         {
             int previousLevel = 1;
             var tableOfContent = new StringBuilder();
             tableOfContent.Append($"<details><summary>Table of Contents</summary><ol>");
+
+            if (this.Sections == null) return "";
+
             foreach (var section in this.Sections)
             {
                 if (section.HeadingSize == 1)
@@ -51,19 +54,21 @@ namespace EasyReadme
 
     public class Project
     {
-        public string Name { get; set; }
-        public string LogoUri { get; set; }
-        public string CloudUri { get; set; }
-        public string BuildUri { get; set; }
+        public string Name { get; set; } = "MyProject";
+        public string? LogoUri { get; set; }
+        public string? CloudUri { get; set; }
+        public string? BuildUri { get; set; }
         public string? TagLine { get; set; }
         public string ProjectName()
         {
+            if (this.CloudUri == null) return "";
             var fullUri = new Uri(this.CloudUri);
             return fullUri.Segments[fullUri.Segments.Count() -1 ];
         }
 
         public string ProjectOwner()
         {
+            if (this.CloudUri == null) return "";
             var fullUri = new Uri(this.CloudUri);
             return fullUri.Segments[fullUri.Segments.Count() -2 ].Replace("/", "");
         }
@@ -91,19 +96,19 @@ namespace EasyReadme
 
     public class GitHub
     {
-        public List<Shield> Shields { get; set; }
+        public List<Shield>? Shields { get; set; }
     }
 
     public class Shield
     {
-        public string Name { get; set; }
-        public string Label { get; set; }
+        public string? Name { get; set; }
+        public string? Label { get; set; }
         public bool Show { get; set; }
     }
 
     public class Header
     {
-        public bool Show { get; set; }
+        public bool Show { get; set; } = false;
         public bool UseShields { get; set; }
         public bool UseLogo { get; set; }
         public bool UseName { get; set; }
@@ -113,25 +118,25 @@ namespace EasyReadme
 
     public class Section
     {
-        public string Heading { get; set; }
+        public string Heading { get; set; } = "Section Heading";
         public int HeadingSize { get; set; } = 1;
-        public List<ContentBlock> ContentBlocks { get; set; }
+        public List<ContentBlock>? ContentBlocks { get; set; }
     }
 
     public class ContentBlock
     {
-        public string Text { get; set; }
-        public string Raw { get; set; }
-        public string CodeBlock { get; set; }
-        public string BlockQuote { get; set; }
-        public string[] BulletList { get; set; }
-        public string[] OrderedList { get; set; }
-        public Image Image { get; set; }
+        public string? Text { get; set; }
+        public string? Raw { get; set; }
+        public string? CodeBlock { get; set; }
+        public string? BlockQuote { get; set; }
+        public string[]? BulletList { get; set; }
+        public string[]? OrderedList { get; set; }
+        public Image? Image { get; set; }
     }
 
     public class Image
     {
-        public string Uri { get; set; }
+        public string? Uri { get; set; }
         public string AltText { get; set; } = "";
         public string Align { get; set; } = "center";
         public int Width { get; set; } = 100;

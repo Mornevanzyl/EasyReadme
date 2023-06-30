@@ -15,24 +15,27 @@ var document = new MdDocument();
 
 if (readme.Header.Show)
 {
-    if (readme.Header.UseShields)
+    if (readme.Project.IsGitHubProject() && readme.Header.UseShields)
     {
-        var shields = new StringBuilder();
-        foreach (var shield in readme.GitHub.Shields)
+        if (readme.GitHub != null && readme.GitHub.Shields != null)
         {
-            if (shield.Show)
+            var shields = new StringBuilder();
+            foreach (var shield in readme.GitHub.Shields)
             {
-                if (shield.Label != null)
+                if (shield.Show)
                 {
-                    shields.Append($"[![{shield.Label}][{shield.Name}-shield]][{shield.Name}-url]");
-                }
-                else
-                {
-                    shields.Append($"[![{shield.Name}][{shield.Name}-shield]][{shield.Name}-url]");
+                    if (shield.Label != null)
+                    {
+                        shields.Append($"[![{shield.Label}][{shield.Name}-shield]][{shield.Name}-url]");
+                    }
+                    else
+                    {
+                        shields.Append($"[![{shield.Name}][{shield.Name}-shield]][{shield.Name}-url]");
+                    }
                 }
             }
+            document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(shields.ToString())));
         }
-        document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(shields.ToString())));
     }
     if (readme.Header.UseLogo)
     {
@@ -58,66 +61,65 @@ if (readme.Header.Show)
     }
 }
 
-foreach (Section section in readme.Sections)
+if (readme.Sections != null)
 {
-}
-
-for (int i = 0; i < readme.Sections.Count; i++)
-{
-
-    var section = readme.Sections[i];
-
-    // Show project header for first section if no document header is used
-    if (!readme.Header.Show && i == 0)
+    for (int i = 0; i < readme.Sections.Count; i++)
     {
-        document.Root.Add(new MdHeading($"About {readme.Project.Name}", section.HeadingSize));
-    }
-    else
-    {
-        document.Root.Add(new MdHeading(section.Heading, section.HeadingSize));
-    }
 
-    if (section.ContentBlocks != null)
-    {
-        foreach (var contentBlock in section.ContentBlocks)
+        var section = readme.Sections[i];
+
+        // Show project header for first section if no document header is used
+        if (!readme.Header.Show && i == 0)
         {
-            if (contentBlock.Text != null)
+            document.Root.Add(new MdHeading($"About {readme.Project.Name}", section.HeadingSize));
+        }
+        else
+        {
+            document.Root.Add(new MdHeading(section.Heading, section.HeadingSize));
+        }
+
+        if (section.ContentBlocks != null)
+        {
+            foreach (var contentBlock in section.ContentBlocks)
             {
-                document.Root.Add(new MdParagraph(contentBlock.Text));
-            }
-            if (contentBlock.Raw != null)
-            {
-                document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Raw)));
-            }
-            if (contentBlock.CodeBlock != null)
-            {
-                document.Root.Add(new MdCodeBlock(contentBlock.CodeBlock));
-            }
-            if (contentBlock.BlockQuote != null)
-            {
-                document.Root.Add(new MdBlockQuote(new MdRawMarkdownSpan(contentBlock.BlockQuote)));
-            }
-            if (contentBlock.BulletList != null)
-            {
-                MdBulletList list = new MdBulletList();
-                foreach (var item in contentBlock.BulletList)
+                if (contentBlock.Text != null)
                 {
-                    list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                    document.Root.Add(new MdParagraph(contentBlock.Text));
                 }
-                document.Root.Add(list);
-            }
-            if (contentBlock.OrderedList != null)
-            {
-                MdOrderedList list = new MdOrderedList();
-                foreach (var item in contentBlock.OrderedList)
+                if (contentBlock.Raw != null)
                 {
-                    list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Raw)));
                 }
-                document.Root.Add(list);
-            }
-            if (contentBlock.Image != null)
-            {
-                document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Image.GenerateMarkup())));
+                if (contentBlock.CodeBlock != null)
+                {
+                    document.Root.Add(new MdCodeBlock(contentBlock.CodeBlock));
+                }
+                if (contentBlock.BlockQuote != null)
+                {
+                    document.Root.Add(new MdBlockQuote(new MdRawMarkdownSpan(contentBlock.BlockQuote)));
+                }
+                if (contentBlock.BulletList != null)
+                {
+                    MdBulletList list = new MdBulletList();
+                    foreach (var item in contentBlock.BulletList)
+                    {
+                        list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                    }
+                    document.Root.Add(list);
+                }
+                if (contentBlock.OrderedList != null)
+                {
+                    MdOrderedList list = new MdOrderedList();
+                    foreach (var item in contentBlock.OrderedList)
+                    {
+                        list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                    }
+                    document.Root.Add(list);
+                }
+                if (contentBlock.Image != null)
+                {
+                    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Image.GenerateMarkup())));
+                }
             }
         }
     }
