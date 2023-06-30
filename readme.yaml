@@ -35,7 +35,9 @@ sections:
   headingSize: 2
   contentBlocks:
   - codeBlock: git clone https://github.com/Mornevanzyl/EasyReadme.git
-  - raw: Modify the ```readme.yaml``` with descriptors and settings appropriate to your project.
+  - raw: Modify the ```readme.yaml``` with descriptors and settings appropriate to your project, or copy one of the starter templates in the [/templates](https://github.com/Mornevanzyl/EasyReadme/tree/main/templates) folder. The graphic below gives an overview of getting started.
+  - image:
+      uri: https://noxorg.dev/docs/images/EasyReadme_demo_start.gif
 - heading: Acknowledgements
   contentBlocks:
   - raw: Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.
