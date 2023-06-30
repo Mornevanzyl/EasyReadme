@@ -90,9 +90,9 @@ if (readme.Sections != null)
                 {
                     document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Raw)));
                 }
-                if (contentBlock.CodeBlock != null)
+                if (contentBlock.CodeBlock != null && contentBlock.CodeBlock.Content != null)
                 {
-                    document.Root.Add(new MdCodeBlock(contentBlock.CodeBlock));
+                    document.Root.Add(new MdCodeBlock(contentBlock.CodeBlock.Content, contentBlock.CodeBlock.Type));
                 }
                 if (contentBlock.BlockQuote != null)
                 {

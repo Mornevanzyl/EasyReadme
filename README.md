@@ -31,7 +31,7 @@ Make sure you have [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet
 
 ## Running the application
 
-```
+```powershell
 git clone https://github.com/Mornevanzyl/EasyReadme.git
 ```
 

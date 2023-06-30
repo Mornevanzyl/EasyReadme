@@ -127,11 +127,17 @@ namespace EasyReadme
     {
         public string? Text { get; set; }
         public string? Raw { get; set; }
-        public string? CodeBlock { get; set; }
+        public CodeBlock? CodeBlock { get; set; }
         public string? BlockQuote { get; set; }
         public string[]? BulletList { get; set; }
         public string[]? OrderedList { get; set; }
         public Image? Image { get; set; }
+    }
+
+    public class CodeBlock
+    {
+        public string? Content { get; set; }
+        public string? Type { get; set; }
     }
 
     public class Image
