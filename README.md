@@ -6,7 +6,7 @@
 
 <p align="center">Taking the fuss out of project README files!</p>
 
-<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
+<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
 
 # About
 
@@ -44,6 +44,12 @@ Modify the ```readme.yaml``` with descriptors and settings appropriate to your p
 To add an additional section, simply add a new section node with a heading, (optional) heading size and as many `contentBlocks` as required. In the example below we've added a new 'Acknowledgements' section and converted the `text` type to a `raw` type to inject raw markdown which ensures the links are displayed correctly.
 
 <div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_add_section_raw.gif" alt="" width="100%"><br /></div>
+
+## Adding a list
+
+You can easily add a list by using a `contentBlocks` type `bulletList` or `orderedList` as required. The latter will generate a numbered list.
+
+<div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_add_list.gif" alt="" width="100%"><br /></div>
 
 # Acknowledgements
 

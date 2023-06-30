@@ -44,6 +44,12 @@ sections:
   - raw: To add an additional section, simply add a new section node with a heading, (optional) heading size and as many `contentBlocks` as required. In the example below we've added a new 'Acknowledgements' section and converted the `text` type to a `raw` type to inject raw markdown which ensures the links are displayed correctly.
   - image:
       uri: https://noxorg.dev/docs/images/EasyReadme_demo_add_section_raw.gif
+- heading: Adding a list
+  headingSize: 2
+  contentBlocks:
+  - raw: You can easily add a list by using a `contentBlocks` type `bulletList` or `orderedList` as required. The latter will generate a numbered list.
+  - image:
+      uri: https://noxorg.dev/docs/images/EasyReadme_demo_add_list.gif
 - heading: Acknowledgements
   contentBlocks:
   - raw: Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.
