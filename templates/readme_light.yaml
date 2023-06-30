@@ -1,0 +1,27 @@
+project:
+  name: MyProject
+
+header:
+  show: false
+
+sections:
+- heading: About
+  contentBlocks:
+  - text: Provide a clear and concise overview of your project and its main objective(s).
+
+# This section is optional but allows custom GitHub configuration
+gitHub:
+  shields:
+    - name: version
+      label: Nuget
+      show: false
+    - name: contributors
+      show: false
+    - name: issues
+      show: true
+    - name: stars
+      show: true
+    - name: build
+      show: false
+    - name: forks
+      show: true
