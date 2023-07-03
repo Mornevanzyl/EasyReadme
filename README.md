@@ -6,7 +6,7 @@
 
 <p align="center">Taking the fuss out of project README files!</p>
 
-<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
+<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li><li><a href="#adding-a-codeblock">Adding a codeblock</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
 
 # About
 
@@ -19,8 +19,8 @@ EasyReadme is a lightweight utility that simplifies the task of creating a READM
 - Scaffold your README by configuring a simple YAML file.
 - Switch GitHub project shields on/off with little effort.
 - Auto-generation of multi-level Table of Content from document sections.
-- Single entry project URIs and info.
-- Content blocks support normal text, images, raw markdown, code blocks and lists (both bullet and numbered).
+- Single entry project name, logo, URIs (project repo and build file), and tagline.
+- Content blocks support normal text, images, raw markdown, code blocks (with syntax types) and lists (both bullet and numbered).
 - Compatible with GitHub and Azure DevOps.
 
 # Getting started
@@ -50,6 +50,14 @@ To add an additional section, simply add a new section node with a heading, (opt
 You can easily add a list by using a `contentBlocks` type `bulletList` or `orderedList` as required. The latter will generate a numbered list.
 
 <div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_add_list.gif" alt="" width="100%"><br /></div>
+
+## Adding a codeblock
+
+Codeblocks may be added to your README by using a `contentBlocks` type `codeBlock`. The content is added using the `content` property and optional syntax support is specified using the `type` property. The demo below shows how to add a [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) codeblock and then a [Mermaid](https://mermaid.js.org/) codeblock.
+
+> 💡 Remember to add a `|` or `>` after `content` property to ensure multi-line support for strings. Correct indentation is also crucial.
+
+<div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_add_codeblocks.gif" alt="" width="100%"><br /></div>
 
 # Acknowledgements
 

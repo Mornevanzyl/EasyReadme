@@ -23,8 +23,8 @@ sections:
     - Scaffold your README by configuring a simple YAML file.
     - Switch GitHub project shields on/off with little effort.
     - Auto-generation of multi-level Table of Content from document sections.
-    - Single entry project URIs and info.
-    - Content blocks support normal text, images, raw markdown, code blocks and lists (both bullet and numbered).
+    - Single entry project name, logo, URIs (project repo and build file), and tagline.
+    - Content blocks support normal text, images, raw markdown, code blocks (with syntax types) and lists (both bullet and numbered).
     - Compatible with GitHub and Azure DevOps.
 - heading: Getting started
 - heading: Prerequisites
@@ -52,6 +52,13 @@ sections:
   - raw: You can easily add a list by using a `contentBlocks` type `bulletList` or `orderedList` as required. The latter will generate a numbered list.
   - image:
       uri: https://noxorg.dev/docs/images/EasyReadme_demo_add_list.gif
+- heading: Adding a codeblock
+  headingSize: 2
+  contentBlocks:
+  - raw: Codeblocks may be added to your README by using a `contentBlocks` type `codeBlock`. The content is added using the `content` property and optional syntax support is specified using the `type` property. The demo below shows how to add a [C#](https://learn.microsoft.com/en-us/dotnet/csharp/) codeblock and then a [Mermaid](https://mermaid.js.org/) codeblock.
+  - blockQuote: 💡 Remember to add a `|` or `>` after `content` property to ensure multi-line support for strings. Correct indentation is also crucial.
+  - image:
+      uri: https://noxorg.dev/docs/images/EasyReadme_demo_add_codeblocks.gif
 - heading: Acknowledgements
   contentBlocks:
   - raw: Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.
