@@ -72,6 +72,14 @@ sections:
   - blockQuote: 💡 Remember to populate the associated properties under the `project` node like `logoUri` and `tagLine`.
   - image:
       uri: https://noxorg.dev/docs/images/EasyReadme_demo_show_header.gif
+- heading: Using GitHub shields
+  headingSize: 2
+  contentBlocks:
+  - raw: Activate GitHub project shields by setting the `useShields` property under the `header` node to `true`. Configure the specific shields you'd like to display under the dedicated `gitHub` -> `shields` section. The label displayed with the shield can be overridden by specifying an optional `label` property. 
+  - raw: You can activate and use the Build shield by setting `show` to true and specifiying the build file under the `buildUri` property under the `project` node.
+  - blockQuote: 💡 The build file uri is available on GitHub by clicking the `Build & Test` sub-tab under the `Actions` tab. The `.yml` file specified in the url of your browser address is the build file.
+  - image:
+      uri: https://noxorg.dev/docs/images/EasyReadme_demo_github_shields.gif
 - heading: Acknowledgements
   contentBlocks:
   - raw: Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.
