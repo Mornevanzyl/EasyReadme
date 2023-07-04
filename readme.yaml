@@ -80,6 +80,12 @@ sections:
   - blockQuote: 💡 The build file uri is available on GitHub by clicking the `Build & Test` sub-tab under the `Actions` tab. The `.yml` file specified in the url of your browser address is the build file.
   - image:
       uri: https://noxorg.dev/docs/images/EasyReadme_demo_github_shields.gif
+- heading: Including a table of content
+  headingSize: 2
+  contentBlocks:
+  - raw: A multi-level table of content can be dynamically generated from the sections you have specified under the `sections` node and displayed by setting the `useTableOfContent` property under the `header` node to `true`.
+  - image:
+      uri: https://noxorg.dev/docs/images/EasyReadme_demo_table_of_content.gif
 - heading: Acknowledgements
   contentBlocks:
   - raw: Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.

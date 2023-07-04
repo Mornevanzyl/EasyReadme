@@ -6,7 +6,7 @@
 
 <p align="center">Taking the fuss out of project README files!</p>
 
-<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li><li><a href="#adding-a-codeblock">Adding a codeblock</a></li><li><a href="#using-blockquotes-and-images">Using blockquotes and images</a></li><li><a href="#using-a-header">Using a header</a></li><li><a href="#using-github-shields">Using GitHub shields</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
+<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li><li><a href="#adding-a-codeblock">Adding a codeblock</a></li><li><a href="#using-blockquotes-and-images">Using blockquotes and images</a></li><li><a href="#using-a-header">Using a header</a></li><li><a href="#using-github-shields">Using GitHub shields</a></li><li><a href="#including-a-table-of-content">Including a table of content</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
 
 # About
 
@@ -82,6 +82,12 @@ You can activate and use the Build shield by setting `show` to true and specifiy
 > 💡 The build file uri is available on GitHub by clicking the `Build & Test` sub-tab under the `Actions` tab. The `.yml` file specified in the url of your browser address is the build file.
 
 <div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_github_shields.gif" alt="" width="100%"><br /></div>
+
+## Including a table of content
+
+A multi-level table of content can be dynamically generated from the sections you have specified under the `sections` node and displayed by setting the `useTableOfContent` property under the `header` node to `true`.
+
+<div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_table_of_content.gif" alt="" width="100%"><br /></div>
 
 # Acknowledgements
 
