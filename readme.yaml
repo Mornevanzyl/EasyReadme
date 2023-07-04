@@ -65,6 +65,13 @@ sections:
   - raw: Blockquotes may be added to your README by using a `contentBlocks` type `blockQuote`. Images are added using a `contentBlocks` type `image`. The image is specified using the `uri` property and optional alt text and width support using the `altText` and `width` properties respectively.
   - image:
       uri: https://noxorg.dev/docs/images/EasyReadme_demo_add_blockquote_and_image.gif
+- heading: Using a header
+  headingSize: 2
+  contentBlocks:
+  - raw: Activate a separate and dedicated header by setting the `show` property under the `header` node to `true`. Additional properties like `useLogo`, `useName` and `useTagLine` can also be switched on or off.
+  - blockQuote: 💡 Remember to populate the associated properties under the `project` node like `logoUri` and `tagLine`.
+  - image:
+      uri: https://noxorg.dev/docs/images/EasyReadme_demo_show_header.gif
 - heading: Acknowledgements
   contentBlocks:
   - raw: Thanks to [Andreas Grünwald](https://github.com/ap0llo) for his cool [Markdown Generator](https://github.com/ap0llo/markdown-generator) package.

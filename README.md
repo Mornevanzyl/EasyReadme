@@ -6,7 +6,7 @@
 
 <p align="center">Taking the fuss out of project README files!</p>
 
-<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li><li><a href="#adding-a-codeblock">Adding a codeblock</a></li><li><a href="#using-blockquotes-and-images">Using blockquotes and images</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
+<details><summary>Table of Contents</summary><ol><li><a href="#about">About</a></li><li><a href="#key-features">Key Features</a></li><li><a href="#getting-started">Getting started</a></li><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-application">Running the application</a></li><li><a href="#adding-a-new-section">Adding a new section</a></li><li><a href="#adding-a-list">Adding a list</a></li><li><a href="#adding-a-codeblock">Adding a codeblock</a></li><li><a href="#using-blockquotes-and-images">Using blockquotes and images</a></li><li><a href="#using-a-header">Using a header</a></li></ul><li><a href="#acknowledgements">Acknowledgements</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#contact">Contact</a></li></ol></details>
 
 # About
 
@@ -64,6 +64,14 @@ Codeblocks may be added to your README by using a `contentBlocks` type `codeBloc
 Blockquotes may be added to your README by using a `contentBlocks` type `blockQuote`. Images are added using a `contentBlocks` type `image`. The image is specified using the `uri` property and optional alt text and width support using the `altText` and `width` properties respectively.
 
 <div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_add_blockquote_and_image.gif" alt="" width="100%"><br /></div>
+
+## Using a header
+
+Activate a separate and dedicated header by setting the `show` property under the `header` node to `true`. Additional properties like `useLogo`, `useName` and `useTagLine` can also be switched on or off.
+
+> 💡 Remember to populate the associated properties under the `project` node like `logoUri` and `tagLine`.
+
+<div align="center"><img src="https://noxorg.dev/docs/images/EasyReadme_demo_show_header.gif" alt="" width="100%"><br /></div>
 
 # Acknowledgements
 
