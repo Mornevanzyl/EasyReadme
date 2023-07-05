@@ -65,18 +65,9 @@ if (readme.Sections != null)
 {
     for (int i = 0; i < readme.Sections.Count; i++)
     {
-
         var section = readme.Sections[i];
 
-        // Show project header for first section if no document header is used
-        if (!readme.Header.Show && i == 0)
-        {
-            document.Root.Add(new MdHeading($"About {readme.Project.Name}", section.HeadingSize));
-        }
-        else
-        {
-            document.Root.Add(new MdHeading(section.Heading, section.HeadingSize));
-        }
+        document.Root.Add(new MdHeading(ReplaceVariables(readme.Project, section.Heading), section.HeadingSize));
 
         if (section.ContentBlocks != null)
         {
@@ -88,7 +79,7 @@ if (readme.Sections != null)
                 }
                 if (contentBlock.Raw != null)
                 {
-                    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(contentBlock.Raw)));
+                    document.Root.Add(new MdParagraph(new MdRawMarkdownSpan(ReplaceVariables(readme.Project, contentBlock.Raw))));
                 }
                 if (contentBlock.CodeBlock != null && contentBlock.CodeBlock.Content != null)
                 {
@@ -103,7 +94,7 @@ if (readme.Sections != null)
                     MdBulletList list = new MdBulletList();
                     foreach (var item in contentBlock.BulletList)
                     {
-                        list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                        list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(ReplaceVariables(readme.Project, item)))));
                     }
                     document.Root.Add(list);
                 }
@@ -112,7 +103,7 @@ if (readme.Sections != null)
                     MdOrderedList list = new MdOrderedList();
                     foreach (var item in contentBlock.OrderedList)
                     {
-                        list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(item))));
+                        list.Add(new MdListItem(new MdParagraph(new MdRawMarkdownSpan(ReplaceVariables(readme.Project, item)))));
                     }
                     document.Root.Add(list);
                 }
@@ -142,4 +133,12 @@ if (readme.Project.IsGitHubProject())
 }
 // save document to a file
 document.Save("README.md");
+
+static string ReplaceVariables(Project project, string content)
+{
+    return content.Replace("*cloudUri", project.CloudUri)
+        .Replace("*name", project.Name)
+        .Replace("*docsUri", project.DocsUri)
+        .Replace("*homePage", project.HomePage);
+}
 

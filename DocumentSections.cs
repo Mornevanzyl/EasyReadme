@@ -58,6 +58,8 @@ namespace EasyReadme
         public string? LogoUri { get; set; }
         public string? CloudUri { get; set; }
         public string? BuildUri { get; set; }
+        public string? DocsUri { get; set; }
+        public string? HomePage { get; set; }
         public string? TagLine { get; set; }
         public string ProjectName()
         {
