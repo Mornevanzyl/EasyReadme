@@ -1,5 +1,5 @@
 project:
-  name: EasyReadme
+  name: &name EasyReadme
   logoUri: https://noxorg.dev/docs/images/EasyReadme.png
   cloudUri: https://github.com/Mornevanzyl/EasyReadme
   tagLine: Taking the fuss out of project README files!
@@ -15,16 +15,18 @@ header:
 sections:
 - heading: About
   contentBlocks:
-  - text: EasyReadme is a lightweight utility that simplifies the task of creating a README.md file for your project repository. It reads a simple YAML configuration file and scaffolds a README file that you can edit.
+  - text: '*name is a lightweight utility that simplifies the task of creating a README.md file for your project repository. It reads a simple YAML configuration file and scaffolds a README file that you can edit.'
   - blockQuote: 💡 This project `README.md` was built entirely by configuring the `readme.yaml` file in the project root.
 - heading: Key Features
   contentBlocks:
   - bulletList:
     - Scaffold your README by configuring a simple YAML file.
+    - Scans project folder & sub-folders. You select which YAML files to process.
     - Switch GitHub project shields on/off with little effort.
     - Auto-generation of multi-level Table of Content from document sections.
     - Single entry project name, logo, URIs (project repo and build file), and tagline.
     - Content blocks support normal text, images, raw markdown, code blocks (with syntax types) and lists (both bullet and numbered).
+    - Includes YAML variables support in text blocks for main project attributes.
     - Compatible with GitHub and Azure DevOps.
 - heading: Getting started
 - heading: Prerequisites
@@ -108,7 +110,7 @@ gitHub:
       label: Nuget
       show: false
     - name: contributors
-      show: false
+      show: true
     - name: issues
       show: true
     - name: stars

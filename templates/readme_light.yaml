@@ -1,11 +1,11 @@
 project:
-  name: MyProject
+  name: &name MyProject
 
 header:
   show: false
 
 sections:
-- heading: About
+- heading: About *name
   contentBlocks:
   - text: Provide a clear and concise overview of your project and its main objective(s).
 

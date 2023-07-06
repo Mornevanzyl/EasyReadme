@@ -1,4 +1,4 @@
-﻿[![issues][issues-shield]][issues-url][![stars][stars-shield]][stars-url][![forks][forks-shield]][forks-url]
+﻿[![contributors][contributors-shield]][contributors-url][![issues][issues-shield]][issues-url][![stars][stars-shield]][stars-url][![forks][forks-shield]][forks-url]
 
 <br /><div align="center"><br /><a href="https://github.com/Mornevanzyl/EasyReadme"><img src="https://noxorg.dev/docs/images/EasyReadme.png" alt="Logo" width="150"></a></div><br />
 
@@ -17,10 +17,12 @@ EasyReadme is a lightweight utility that simplifies the task of creating a READM
 # Key Features
 
 - Scaffold your README by configuring a simple YAML file.
+- Scans project folder & sub-folders. You select which YAML files to process.
 - Switch GitHub project shields on/off with little effort.
 - Auto-generation of multi-level Table of Content from document sections.
 - Single entry project name, logo, URIs (project repo and build file), and tagline.
 - Content blocks support normal text, images, raw markdown, code blocks (with syntax types) and lists (both bullet and numbered).
+- Includes YAML variables support in text blocks for main project attributes.
 - Compatible with GitHub and Azure DevOps.
 
 # Getting started

@@ -37,9 +37,13 @@ sections:
 - heading: Running the application
   headingSize: 2
   contentBlocks:
-  - codeBlock: git clone https://github.com/MyGitProfile/MyProject.git
+  - codeBlock:
+      content: git clone https://github.com/MyGitProfile/MyProject.git
+      type: powershell
   - raw: Provide step-by-step instructions to running the application, including cloning and run directives.
-  - codeBlock: dotnet run
+  - codeBlock:
+      content: dotnet run
+      type: powershell
 - heading: Acknowledgements
   contentBlocks:
   - raw: Acknowledge [people](https://github.com/torvalds) that have contributed to your project or provided inspiration. List [packages](https://github.com/torvalds/linux) that you may have used in your solution.

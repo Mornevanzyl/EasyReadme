@@ -33,13 +33,13 @@ Outline system or development prerequisites to install or integrate the applicat
 
 ## Running the application
 
-```
+```powershell
 git clone https://github.com/MyGitProfile/MyProject.git
 ```
 
 Provide step-by-step instructions to running the application, including cloning and run directives.
 
-```
+```powershell
 dotnet run
 ```
 
